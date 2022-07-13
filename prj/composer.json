@@ -1,0 +1,24 @@
+{
+    "name": "Slim3ProtoProj",
+    "require": {
+        "slim/slim": "^3.0",
+        "monolog/monolog": "1.22.*",
+        "j4mie/idiorm": "1.4.0",
+        "justinrainbow/json-schema": "1.4.*@dev",
+        "slim/flash": "0.2.0",
+        "slim/php-view": "2.2.0",
+        "phpmailer/phpmailer": "v6.0.0rc4",
+        "ashiina/socket.io-emitter": "dev-master",
+        "php-amqplib/php-amqplib": "2.6.*"
+    },
+    "autoload": {
+        "psr-0": {
+            "App": "app/",
+            "Utils": "app/",
+            "Middlewares": "app/",
+            "Interfaces": "app/"
+        }
+    }
+}
+
+

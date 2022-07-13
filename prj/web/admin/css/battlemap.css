@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+table.battle_map { border: 0px; }
+
+td.mapchip-1 { width: 10px; height: 10px; background-color: #000000; }
+td.mapchip255{ width: 10px; height: 10px; background-color: #000000; }
+td.mapchip0  { width: 10px; height: 10px; background-color: #ffc767; }
+td.mapchip1  { width: 10px; height: 10px; background-color: #dfcc95; }
+td.mapchip2  { width: 10px; height: 10px; background-color: #aaff00; }
+td.mapchip3  { width: 10px; height: 10px; background-color: #b77e56; }
+td.mapchip4  { width: 10px; height: 10px; background-color: #ffe186; }
+td.mapchip5  { width: 10px; height: 10px; background-color: #589d25; }
+td.mapchip6  { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip7  { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip8  { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip9  { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip10 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip11 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip12 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip13 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip14 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip15 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip16 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip17 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip18 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip19 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip20 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip21 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip22 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip23 { width: 10px; height: 10px; background-color: #00bafb; }
+td.mapchip24 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip25 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip26 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip27 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip28 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip29 { width: 10px; height: 10px; background-color: #aaaaaa; }
+td.mapchip30 { width: 10px; height: 10px; background-color: #ff0000; }
+td.mapchip31 { width: 10px; height: 10px; background-color: #ff0000; }
+td.mapchip32 { width: 10px; height: 10px; background-color: #888888; }
+td.mapchip33 { width: 10px; height: 10px; background-color: #008800; }
+td.mapchip34 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip35 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip36 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip37 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip38 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip39 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip40 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip41 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip42 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip43 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip44 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip45 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip46 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip47 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip48 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip49 { width: 10px; height: 10px; background-color: #444444; }
+td.mapchip50 { width: 10px; height: 10px; background-color: #444444; }

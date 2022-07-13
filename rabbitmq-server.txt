@@ -1,0 +1,49 @@
+yum install rabbitmq-server
+systemctl enable rabbitmq-server
+systemctl start rabbitmq-server
+rabbitmq-plugins enable rabbitmq_management
+systemctl restart rabbitmq-server
+http://192.168.2.92:15672
+
+id:guest
+pw:guest
+
+password change
+
+add user
+id: super_admin
+pw:...
+
+
+vi /etc/systemd/system/supervisord.service
+
+[Unit]
+Description=Supervisor process control system for UNIX
+Documentation=http://supervisord.org
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/supervisord -n -c /etc/supervisord.conf
+ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+KillMode=process
+Restart=on-failure
+RestartSec=50s
+
+[Install]
+WantedBy=multi-user.target
+
+systemctl enable supervisord
+
+
+GrowthForecast登録の例
+[program:GrowthForecast]
+command=/usr/local/bin/growthforecast.pl --enable-float-number --data-dir /data/gf    ; 起動コマンド
+user=monadmin  ; 起動ユーザ
+autorestart=true  ; プロセスダウン時に自動再起動
+stdout_logfile=/var/log/supervisor/jobs/GrowthForecast-supervisord.log ; 標準出力ログ
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=5
+stdout_capture_maxbytes=1MB
+redirect_stderr=true  ; エラー出力を標準出力にリダイレクト
+これを/etc/supervisord.d/GrowthForecast.iniにでも作成しておきます。

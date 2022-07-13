@@ -1,0 +1,6 @@
+{
+	"name": "pm2 socketio sample",
+	"script": "app.js",
+	"exec_mode": "cluster_mode",
+	"instances": 2
+}

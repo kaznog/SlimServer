@@ -1,0 +1,23 @@
+{
+	"name": "socket.io_stress_test_client",
+	"version": "0.0.1",
+	"description": "socket.io stress test client",
+	"main": "test.js",
+	"dependencies": {
+	    "msgpack": "^1.0.2",
+	    "socket.io": "^1.7.2",
+	    "socket.io-cookie": "0.0.1",
+		"uuid": "^3.0.1",
+		"request": "^2.81.0",
+		"async": "^2.1.5",
+		"crypto": "^0.0.3"
+	},
+	"devDependencies": {},
+	"private": true,
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"start": "node test.js"
+	},
+	"author": "kaznog@gmail.com",
+	"license": "MIT"
+}

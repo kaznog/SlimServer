@@ -1,0 +1,1 @@
+CREATE TABLE ignore_pages (id INTEGER PRIMARY KEY AUTOINCREMENT, role_id INTEGER, pattern TEXT, method TEXT, comments TEXT)

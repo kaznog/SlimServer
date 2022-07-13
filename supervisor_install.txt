@@ -1,0 +1,75 @@
+yum install supervisor
+
+[root@cent7php7proto ~]# cat /etc/supervisord.d/AMQP_Disconnected_Reciever.ini
+[program:AMQP_Disconnected_Reciever]
+command=/usr/bin/php /var/www/current/scripts/amqp_disconnected_reciever.php
+user=nginx       ;起動ユーザー
+autorestart=true ;プロセスダウン時に自動再起動
+environment=APP_ENV=local ; 環境変数設定
+stdout_logfile=/var/log/supervisor/jobs/AMQP_Disconnected_Reciever-supervisord.log ;標準出力ログ
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=5
+stdout_capture_maxbytes=1MB
+redirect_stderr=true ; エラー出力を標準出力にリダイレクト
+
+[root@cent7php7proto ~]# cat /etc/supervisord.d/leave_town_entry_reserve.ini
+[program:leave_town_entry_reserve]
+command=/usr/bin/php /var/www/current/scripts/leave_town_entry_reserve.php
+user=nginx       ;起動ユーザー
+autorestart=true ;プロセスダウン時に自動再起動
+environment=APP_ENV=local ; 環境変数設定
+stdout_logfile=/var/log/supervisor/jobs/leave_town_entry_reserve-supervisord.log ;標準出力ログ
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=5
+stdout_capture_maxbytes=1MB
+redirect_stderr=true ; エラー出力を標準出力にリダイレクト
+
+[root@cent7php7proto ~]# cat /etc/supervisord.d/amqp_unset_townentryreserve_reciever.ini
+[program:amqp_unset_townentryreserve_reciever]
+command=/usr/bin/php /var/www/current/scripts/amqp_unset_townentryreserve_reciever.php
+user=nginx       ;起動ユーザー
+autorestart=true ;プロセスダウン時に自動再起動
+environment=APP_ENV=local ; 環境変数設定
+stdout_logfile=/var/log/supervisor/jobs/amqp_unset_townentryreserve_reciever-supervisord.log ;標準出力ログ
+stdout_logfile_maxbytes=1MB
+stdout_logfile_backups=5
+stdout_capture_maxbytes=1MB
+redirect_stderr=true ; エラー出力を標準出力にリダイレクト
+
+
+
+// ネットワークが利用できるように待機するためのサービスを起動するようにしておく
+systemctl enable NetworkManager-wait-online.service
+
+// supervisorをサービスとして起動できるように設定ファイルを作成
+vi /etc/systemd/system/supervisord.service
+[Unit]
+Description=Supervisor process control system for UNIX
+Documentation=http://supervisord.org
+After=network-online
+
+[Service]
+ExecStart=/usr/bin/supervisord -n -c /etc/supervisord.conf
+ExecStop=/usr/bin/supervisorctl $OPTIONS shutdown
+ExecReload=/usr/bin/supervisorctl $OPTIONS reload
+KillMode=process
+Restart=on-failure
+RestartSec=50s
+
+[Install]
+WantedBy=multi-user.target
+WantedBy=network-online.target
+
+
+// vagrant環境でソースファイルがマウントされてからsupervisorが動作するようにsupervisord.serviceを再起動する設定を作成
+[root@cent7php7proto ~]# vi /etc/udev/rules.d/50-vagrant-mount.rules
+SUBSYSTEM=="bdi",ACTION=="add",RUN+="/bin/bash /root/.udev-mount-restart-services.sh"
+
+[root@cent7php7proto ~]# vi ~/.udev-mount-restart-services.sh
+sleep 5 # wait for a bit for NFS to make sure resources are available
+systemctl restart supervisord.service > /dev/null 2>&1
+
+// supervisord.serviceを起動するように設定
+[root@cent7php7proto ~]# systemctl enable supervisord.service
+Created symlink from /etc/systemd/system/multi-user.target.wants/supervisord.service to /etc/systemd/system/supervisord.service.
+Created symlink from /etc/systemd/system/network-online.target.wants/supervisord.service to /etc/systemd/system/supervisord.service.

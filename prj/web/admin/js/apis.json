@@ -1,0 +1,136 @@
+{
+  "groups": [
+    {
+      "name": "nodejs関連",
+      "contents": [
+        "sample/get_node_process_info"
+      ]
+    },
+    {
+      "name": "SQEX Bridge関連API",
+      "contents": [
+        "sample/test_native_sessid",
+        "sample/get_bridge_native_session_id",
+        "sample/get_client_native_session_id"
+      ]
+    },
+    {
+      "name": "ログイン関連API",
+      "contents": [
+        "app/check_version",
+        "player/get_native_token",
+        "player/update_sess",
+        "player/login_bridge",
+        "player/signup",
+        "player/login"
+      ]
+    },
+    {
+      "name": "MultiPlay関連",
+      "contents": [
+        "multiplay/get_token",
+        "multiplay/get_town_list",
+        "multiplay/entry_town",
+        "multiplay/unset_town_entry_reserve"
+      ]
+    },
+    {
+      "name": "",
+      "contents": []
+    }
+  ],
+  "sample/get_node_process_info": {
+    "title": "get node process info",
+    "action": "/sample/get_node_process_info",
+    "method": "GET",
+    "LoginNotRequired": true
+  },
+  "sample/test_native_sessid": {
+    "title": "SQEX Bridge情報取得テスト",
+    "action": "/sample/test_native_sessid",
+    "method": "POST",
+    "LoginNotRequired": true,
+    "json": "{\"uuid\":\"\",\"devicePlatform\":}"
+  },
+  "sample/get_bridge_native_session_id": {
+    "title": "SQEX Bridge native session id再取得テスト",
+    "action": "/sample/get_bridge_native_session_id",
+    "method": "POST",
+    "LoginNotRequired": true,
+    "json": "{\"user_id\":\"\"}"
+  },
+  "sample/get_client_native_session_id": {
+    "title": "SQEX Bridge client native session id取得テスト",
+    "action": "/sample/get_client_native_session_id",
+    "method": "POST",
+    "LoginNotRequired": true,
+    "json": "{\"uuid\":\"\",\"nativeToken\":\"\",\"devicePlatform\":}"
+  },
+  "app/check_version": {
+    "title": "アプリバージョン確認",
+    "action": "/app/check_version?platform=&appVersion=",
+    "method": "GET",
+    "loginNotRequired": true
+  },
+  "player/get_native_token": {
+    "title": "SQEX native token取得",
+    "action": "/player/get_native_token",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"devicePlatform\":}"
+  },
+  "player/update_sess": {
+    "title": "SQEX native session更新",
+    "action": "/player/update_sess",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"clientNativeSessionId\":\"\",\"devicePlatform\":}"
+  },
+  "player/login_bridge": {
+    "title": "bridge login",
+    "action": "/player/login_bridge",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"userId\":\"\",\"nativeSessionId\":\"\",\"sharedSecurityKey\":\"\",\"devicePlatform\":}"
+  },
+  "player/signup": {
+    "title": "サインアップ",
+    "action": "/player/signup",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"userId\":\"\",\"name\":\"\",\"gender\":,\"devicePlatform\":}"
+  },
+  "player/login": {
+    "title": "ログイン",
+    "action": "/player/login",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"userId\":\"\"}"
+  },
+  "multiplay/get_token": {
+    "title": "Token取得",
+    "action": "/multiplay/get_token",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"serverType\":,\"pvpId\":\"\"}"
+  },
+  "multiplay/get_town_list": {
+    "title": "タウンリスト取得",
+    "action": "/multiplay/get_town_list",
+    "method": "GET",
+    "loginNotRequired": true
+  },
+  "multiplay/entry_town": {
+    "title": "タウン入室予約",
+    "action": "/multiplay/entry_town",
+    "method": "POST",
+    "loginNotRequired": true,
+    "json": "{\"townId\":\"\"}"
+  },
+  "multiplay/unset_town_entry_reserve": {
+    "title": "タウン入室予約解除",
+    "action": "/multiplay/unset_town_entry_reserve",
+    "method": "GET",
+    "loginNotRequired": true
+  }
+}
